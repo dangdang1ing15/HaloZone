@@ -41,7 +41,6 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
-				MPCSession.swift,
 			);
 			target = 09136DC22DA3B2CD00389ABF /* HaloZone */;
 		};
