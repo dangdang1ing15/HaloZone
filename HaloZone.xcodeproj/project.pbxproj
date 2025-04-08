@@ -1,0 +1,602 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		09136E0A2DA3C6DA00389ABF /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09136E062DA3C6A900389ABF /* MultipeerConnectivity.framework */; };
+		09136E0D2DA3C6DB00389ABF /* NearbyInteraction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09136E082DA3C6B000389ABF /* NearbyInteraction.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		09136DD42DA3B2CE00389ABF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 09136DBB2DA3B2CD00389ABF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 09136DC22DA3B2CD00389ABF;
+			remoteInfo = HaloZone;
+		};
+		09136DDE2DA3B2CE00389ABF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 09136DBB2DA3B2CD00389ABF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 09136DC22DA3B2CD00389ABF;
+			remoteInfo = HaloZone;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		09136DC32DA3B2CD00389ABF /* HaloZone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HaloZone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		09136DD32DA3B2CE00389ABF /* HaloZoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HaloZoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		09136DDD2DA3B2CE00389ABF /* HaloZoneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HaloZoneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		09136E062DA3C6A900389ABF /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
+		09136E082DA3C6B000389ABF /* NearbyInteraction.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NearbyInteraction.framework; path = System/Library/Frameworks/NearbyInteraction.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		09136E042DA3BE2C00389ABF /* Exceptions for "HaloZone" folder in "HaloZone" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+				MPCSession.swift,
+			);
+			target = 09136DC22DA3B2CD00389ABF /* HaloZone */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		09136DC52DA3B2CD00389ABF /* HaloZone */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				09136E042DA3BE2C00389ABF /* Exceptions for "HaloZone" folder in "HaloZone" target */,
+			);
+			path = HaloZone;
+			sourceTree = "<group>";
+		};
+		09136DD62DA3B2CE00389ABF /* HaloZoneTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = HaloZoneTests;
+			sourceTree = "<group>";
+		};
+		09136DE02DA3B2CE00389ABF /* HaloZoneUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = HaloZoneUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		09136DC02DA3B2CD00389ABF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09136E0D2DA3C6DB00389ABF /* NearbyInteraction.framework in Frameworks */,
+				09136E0A2DA3C6DA00389ABF /* MultipeerConnectivity.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		09136DD02DA3B2CE00389ABF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		09136DDA2DA3B2CE00389ABF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		09136DBA2DA3B2CD00389ABF = {
+			isa = PBXGroup;
+			children = (
+				09136DC52DA3B2CD00389ABF /* HaloZone */,
+				09136DD62DA3B2CE00389ABF /* HaloZoneTests */,
+				09136DE02DA3B2CE00389ABF /* HaloZoneUITests */,
+				09136E052DA3C6A900389ABF /* Frameworks */,
+				09136DC42DA3B2CD00389ABF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		09136DC42DA3B2CD00389ABF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				09136DC32DA3B2CD00389ABF /* HaloZone.app */,
+				09136DD32DA3B2CE00389ABF /* HaloZoneTests.xctest */,
+				09136DDD2DA3B2CE00389ABF /* HaloZoneUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		09136E052DA3C6A900389ABF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				09136E082DA3C6B000389ABF /* NearbyInteraction.framework */,
+				09136E062DA3C6A900389ABF /* MultipeerConnectivity.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		09136DC22DA3B2CD00389ABF /* HaloZone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 09136DE72DA3B2CE00389ABF /* Build configuration list for PBXNativeTarget "HaloZone" */;
+			buildPhases = (
+				09136DBF2DA3B2CD00389ABF /* Sources */,
+				09136DC02DA3B2CD00389ABF /* Frameworks */,
+				09136DC12DA3B2CD00389ABF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				09136DC52DA3B2CD00389ABF /* HaloZone */,
+			);
+			name = HaloZone;
+			packageProductDependencies = (
+			);
+			productName = HaloZone;
+			productReference = 09136DC32DA3B2CD00389ABF /* HaloZone.app */;
+			productType = "com.apple.product-type.application";
+		};
+		09136DD22DA3B2CE00389ABF /* HaloZoneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 09136DEA2DA3B2CE00389ABF /* Build configuration list for PBXNativeTarget "HaloZoneTests" */;
+			buildPhases = (
+				09136DCF2DA3B2CE00389ABF /* Sources */,
+				09136DD02DA3B2CE00389ABF /* Frameworks */,
+				09136DD12DA3B2CE00389ABF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				09136DD52DA3B2CE00389ABF /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				09136DD62DA3B2CE00389ABF /* HaloZoneTests */,
+			);
+			name = HaloZoneTests;
+			packageProductDependencies = (
+			);
+			productName = HaloZoneTests;
+			productReference = 09136DD32DA3B2CE00389ABF /* HaloZoneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		09136DDC2DA3B2CE00389ABF /* HaloZoneUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 09136DED2DA3B2CE00389ABF /* Build configuration list for PBXNativeTarget "HaloZoneUITests" */;
+			buildPhases = (
+				09136DD92DA3B2CE00389ABF /* Sources */,
+				09136DDA2DA3B2CE00389ABF /* Frameworks */,
+				09136DDB2DA3B2CE00389ABF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				09136DDF2DA3B2CE00389ABF /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				09136DE02DA3B2CE00389ABF /* HaloZoneUITests */,
+			);
+			name = HaloZoneUITests;
+			packageProductDependencies = (
+			);
+			productName = HaloZoneUITests;
+			productReference = 09136DDD2DA3B2CE00389ABF /* HaloZoneUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		09136DBB2DA3B2CD00389ABF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					09136DC22DA3B2CD00389ABF = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					09136DD22DA3B2CE00389ABF = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 09136DC22DA3B2CD00389ABF;
+					};
+					09136DDC2DA3B2CE00389ABF = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 09136DC22DA3B2CD00389ABF;
+					};
+				};
+			};
+			buildConfigurationList = 09136DBE2DA3B2CD00389ABF /* Build configuration list for PBXProject "HaloZone" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 09136DBA2DA3B2CD00389ABF;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 09136DC42DA3B2CD00389ABF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				09136DC22DA3B2CD00389ABF /* HaloZone */,
+				09136DD22DA3B2CE00389ABF /* HaloZoneTests */,
+				09136DDC2DA3B2CE00389ABF /* HaloZoneUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		09136DC12DA3B2CD00389ABF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		09136DD12DA3B2CE00389ABF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		09136DDB2DA3B2CE00389ABF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		09136DBF2DA3B2CD00389ABF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		09136DCF2DA3B2CE00389ABF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		09136DD92DA3B2CE00389ABF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		09136DD52DA3B2CE00389ABF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 09136DC22DA3B2CD00389ABF /* HaloZone */;
+			targetProxy = 09136DD42DA3B2CE00389ABF /* PBXContainerItemProxy */;
+		};
+		09136DDF2DA3B2CE00389ABF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 09136DC22DA3B2CD00389ABF /* HaloZone */;
+			targetProxy = 09136DDE2DA3B2CE00389ABF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		09136DE52DA3B2CE00389ABF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		09136DE62DA3B2CE00389ABF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		09136DE82DA3B2CE00389ABF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HaloZone/Preview Content\"";
+				DEVELOPMENT_TEAM = R9WPZ5669L;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HaloZone/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = elian.HaloZone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		09136DE92DA3B2CE00389ABF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HaloZone/Preview Content\"";
+				DEVELOPMENT_TEAM = R9WPZ5669L;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HaloZone/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = elian.HaloZone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		09136DEB2DA3B2CE00389ABF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R9WPZ5669L;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = elian.HaloZoneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HaloZone.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HaloZone";
+			};
+			name = Debug;
+		};
+		09136DEC2DA3B2CE00389ABF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R9WPZ5669L;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = elian.HaloZoneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HaloZone.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HaloZone";
+			};
+			name = Release;
+		};
+		09136DEE2DA3B2CE00389ABF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R9WPZ5669L;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = elian.HaloZoneUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HaloZone;
+			};
+			name = Debug;
+		};
+		09136DEF2DA3B2CE00389ABF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R9WPZ5669L;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = elian.HaloZoneUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HaloZone;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		09136DBE2DA3B2CD00389ABF /* Build configuration list for PBXProject "HaloZone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09136DE52DA3B2CE00389ABF /* Debug */,
+				09136DE62DA3B2CE00389ABF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		09136DE72DA3B2CE00389ABF /* Build configuration list for PBXNativeTarget "HaloZone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09136DE82DA3B2CE00389ABF /* Debug */,
+				09136DE92DA3B2CE00389ABF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		09136DEA2DA3B2CE00389ABF /* Build configuration list for PBXNativeTarget "HaloZoneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09136DEB2DA3B2CE00389ABF /* Debug */,
+				09136DEC2DA3B2CE00389ABF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		09136DED2DA3B2CE00389ABF /* Build configuration list for PBXNativeTarget "HaloZoneUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09136DEE2DA3B2CE00389ABF /* Debug */,
+				09136DEF2DA3B2CE00389ABF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 09136DBB2DA3B2CD00389ABF /* Project object */;
+}
