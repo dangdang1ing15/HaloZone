@@ -1,7 +1,6 @@
 import Foundation
 import MultipeerConnectivity
 import NearbyInteraction
-import Combine
 
 // MARK: - Peer 모델
 struct PeerInfo: Identifiable, Equatable {
@@ -115,39 +114,36 @@ class NearbyInteractionCoordinator: NSObject, ObservableObject {
 
     // MARK: - 데이터 수신
     func handleDataReceived(_ data: Data, from peer: MCPeerID) {
-        guard let text = String(data: data, encoding: .utf8) else {
-            print("⚠️ Unknown data format received")
-            return
-        }
+        if let message = String(data: data, encoding: .utf8),
+           let index = peers.firstIndex(where: { $0.id == peer.displayName }) {
 
-        if text.hasPrefix("MSG:") {
-            let message = String(text.dropFirst(4))
-            print("📥 Received MSG from \(peer.displayName): \(message)")
+            print("📥 메시지 수신: \(message) from \(peer.displayName)")
             
-            if let index = peers.firstIndex(where: { $0.id == peer.displayName }) {
-                DispatchQueue.main.async {
-                    self.peers[index].message = message
-                }
+            DispatchQueue.main.async {
+                self.peers[index].message = message
             }
             saveMessage(peer.displayName, message: message)
-            blockPeer(peer.displayName)
-            sendAck(to: peer)
-
-        } else if text.hasPrefix("ACK:") {
-            print("✅ ACK received from \(peer.displayName)")
-            blockPeer(peer.displayName)
-            disconnectSessions()
-
-        } else if let token = try? NSKeyedUnarchiver.unarchivedObject(ofClass: NIDiscoveryToken.self, from: data) {
-            peerDidShareDiscoveryToken(peer: peer, token: token)
+            
+            if message != "메시지 수신 완료" {
+                sendMessageAcknowledgment(to: peer)
+            } else {
+                print("✅ \(peer.displayName) 로부터 수신 완료 응답 받음")
+                blockPeer(peer.displayName)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    self.mpcSession?.invalidate()
+                }
+            }
         }
     }
 
-    // MARK: - ACK 전송
-    func sendAck(to peer: MCPeerID) {
-        let ackMessage = "ACK:\(identity)"
-        guard let data = ackMessage.data(using: .utf8) else { return }
-        mpcSession?.sendData(data: data, peers: [peer], mode: .reliable)
+
+    
+    // 응답을 보내는 메서드
+    func sendMessageAcknowledgment(to peerID: MCPeerID) {
+        let acknowledgmentMessage = "메시지 수신 완료"
+        guard let data = acknowledgmentMessage.data(using: .utf8) else { return }
+        mpcSession?.sendData(data: data, peers: [peerID], mode: .reliable)
+        print("📤 Sent acknowledgment to \(peerID.displayName): \(acknowledgmentMessage)")
     }
 
     func peerDidShareDiscoveryToken(peer: MCPeerID, token: NIDiscoveryToken) {
@@ -174,12 +170,26 @@ class NearbyInteractionCoordinator: NSObject, ObservableObject {
 
     // MARK: - 메시지 전송
     func sendMessage(_ message: String, to peerID: MCPeerID) {
-        let formatted = "MSG:\(message)"
-        guard let data = formatted.data(using: .utf8) else { return }
+        guard let data = message.data(using: .utf8) else { return }
         mpcSession?.sendData(data: data, peers: [peerID], mode: .reliable)
         print("📤 Sent message to \(peerID.displayName): \(message)")
+
+        saveMessage(peerID.displayName, message: message)
+
+        // 메시지를 전송하고 응답을 기다림
+        waitForAcknowledgment(from: peerID)
+    }
+    
+    func waitForAcknowledgment(from peerID: MCPeerID) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            if !self.blockedPeers.contains(peerID.displayName) {
+                print("⏱️ 응답 시간 초과: \(peerID.displayName)")
+                // 세션은 유지, 차단하지 않음
+            }
+        }
     }
 
+    
     // MARK: - 세션 끊기
     func disconnectSessions() {
         niSession?.invalidate()

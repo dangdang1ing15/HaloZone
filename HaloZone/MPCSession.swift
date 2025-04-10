@@ -107,10 +107,18 @@ class MPCSession: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     }
 
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-        DispatchQueue.main.async {
-            self.peerDataHandler?(data, peerID)
+        // 데이터를 문자열로 변환
+        if let message = String(data: data, encoding: .utf8) {
+            print("📥 Received message from \(peerID.displayName): \(message)")
+            
+            DispatchQueue.main.async {
+                self.peerDataHandler?(data, peerID)  // 기존의 데이터 핸들러 호출
+            }
+        } else {
+            print("⚠️ Received non-string data from \(peerID.displayName)")
         }
     }
+
 
     func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {}
     func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) {}
@@ -129,7 +137,6 @@ class MPCSession: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
             print("🚫 Skipping peer (self or full)")
         }
     }
-
 
     func browser(_ browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) {
         print("👋 Lost peer: \(peerID.displayName)")
