@@ -21,6 +21,8 @@ struct PeerInfo: Identifiable, Equatable {
 class NearbyInteractionCoordinator: NSObject, ObservableObject {
     // MARK: - Published
     @Published var peers: [PeerInfo] = []
+    @Published var commonMessage: String = ""
+    @Published var autoSendEnabled: Bool = false
 
     // MARK: - MPC & NI
     private var mpcSession: MPCSession?
@@ -98,6 +100,10 @@ class NearbyInteractionCoordinator: NSObject, ObservableObject {
             DispatchQueue.main.async {
                 self.peers.append(info)
             }
+        }
+        if autoSendEnabled && !commonMessage.isEmpty {
+            print("⚡️ 자동 메시지 전송: \(commonMessage) → \(peer.displayName)")
+            sendMessage(commonMessage, to: peer)
         }
     }
 
