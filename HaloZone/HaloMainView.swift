@@ -3,24 +3,34 @@ import SwiftUI
 struct HaloMainView: View {
     @StateObject private var coordinator = NearbyInteractionCoordinator()
     @State private var autoSendEnabled: Bool = false
-    @State private var commonMessage: String = ""
+    @State private var commonMessage: String = UserDefaults.standard.string(forKey: "commonMessage") ?? ""
+
 
     var body: some View {
         NavigationView {
             VStack {
                 List {
-                    // 📨 메시지 설정 영역 내에 토글 추가
                     Section(header: Text("📨 보낼 메시지")) {
-                        TextField("공통 메시지를 입력하세요", text: $commonMessage)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .padding(.vertical, 4)
+                        HStack {
+                            TextField("공통 메시지를 입력하세요", text: $commonMessage)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+
+                            Button(action: {
+                                UserDefaults.standard.set(commonMessage, forKey: "commonMessage")
+                                coordinator.commonMessage = commonMessage
+                                print("✅ 메시지 저장됨: \(commonMessage)")
+                            }) {
+                                Image(systemName: "tray.and.arrow.down")
+                            }
+                            .disabled(commonMessage.isEmpty)
+                            .help("메시지 저장")
+                        }
 
                         Toggle(isOn: $autoSendEnabled) {
                             Label("자동 전송", systemImage: autoSendEnabled ? "bolt.fill" : "bolt.slash")
                                 .foregroundColor(autoSendEnabled ? .green : .gray)
                         }
                     }
-
 
                     // 연결된 기기 리스트
                     Section(header: Text("🔗 연결된 기기")) {
@@ -96,12 +106,12 @@ struct HaloMainView: View {
                 }
             }
             .onChange(of: commonMessage) { newValue in
+                UserDefaults.standard.set(newValue, forKey: "commonMessage")
                 coordinator.commonMessage = newValue
             }
             .onChange(of: autoSendEnabled) { newValue in
                 coordinator.autoSendEnabled = newValue
             }
-
         }
     }
 }
