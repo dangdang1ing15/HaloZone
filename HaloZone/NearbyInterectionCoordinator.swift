@@ -2,6 +2,13 @@ import Foundation
 import MultipeerConnectivity
 import NearbyInteraction
 
+struct ReceivedMessage: Codable {
+    let message: String
+    let sender: String
+    let receivedAt: String
+}
+
+
 // MARK: - Peer 모델
 struct PeerInfo: Identifiable, Equatable {
     let id: String
@@ -208,12 +215,28 @@ class NearbyInteractionCoordinator: NSObject, ObservableObject {
         }
     }
 
-    // MARK: - 메시지 저장/로드
     func saveMessage(_ peerID: String, message: String) {
-        var messages = UserDefaults.standard.dictionary(forKey: savedMessagesKey) as? [String: String] ?? [:]
-        messages[peerID] = message
-        UserDefaults.standard.set(messages, forKey: savedMessagesKey)
+        let now = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        let timeString = formatter.string(from: now)
+
+        var messages = loadAllMessages()
+        messages.append(ReceivedMessage(message: message, sender: peerID, receivedAt: timeString))
+
+        if let data = try? JSONEncoder().encode(messages) {
+            UserDefaults.standard.set(data, forKey: savedMessagesKey)
+        }
     }
+
+    func loadAllMessages() -> [ReceivedMessage] {
+        guard let data = UserDefaults.standard.data(forKey: savedMessagesKey),
+              let messages = try? JSONDecoder().decode([ReceivedMessage].self, from: data) else {
+            return []
+        }
+        return messages
+    }
+
 
     func loadSavedMessages() {
         if let saved = UserDefaults.standard.dictionary(forKey: savedMessagesKey) as? [String: String] {

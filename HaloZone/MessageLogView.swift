@@ -1,18 +1,33 @@
-//
-//  MessageLogView.swift
-//  HaloZone
-//
-//  Created by 성현 on 4/10/25.
-//
-
 import SwiftUI
 
 struct MessageLogView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+    @State private var messages: [ReceivedMessage] = []
 
-#Preview {
-    MessageLogView()
+    var body: some View {
+        List(messages.indices, id: \.self) { index in
+            let msg = messages[index]
+            VStack(alignment: .leading) {
+                Text("📥 \(msg.message)")
+                    .font(.body)
+                Text("👤 \(msg.sender)")
+                    .font(.caption)
+                    .foregroundColor(.gray)
+                Text("⏰ \(msg.receivedAt)")
+                    .font(.caption2)
+                    .foregroundColor(.blue)
+            }
+            .padding(.vertical, 4)
+        }
+        .navigationTitle("📜 메시지 로그")
+        .onAppear {
+            loadMessages()
+        }
+    }
+
+    func loadMessages() {
+        if let data = UserDefaults.standard.data(forKey: "savedMessages"),
+           let decoded = try? JSONDecoder().decode([ReceivedMessage].self, from: data) {
+            messages = decoded
+        }
+    }
 }
